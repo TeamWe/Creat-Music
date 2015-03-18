@@ -10,10 +10,13 @@
 		930FFBF91AB702A800A675A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FFBF81AB702A800A675A6 /* main.m */; };
 		930FFBFC1AB702A800A675A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FFBFB1AB702A800A675A6 /* AppDelegate.m */; };
 		930FFBFF1AB702A800A675A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FFBFE1AB702A800A675A6 /* ViewController.m */; };
-		930FFC021AB702A900A675A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930FFC001AB702A900A675A6 /* Main.storyboard */; };
 		930FFC041AB702A900A675A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930FFC031AB702A900A675A6 /* Images.xcassets */; };
-		930FFC071AB702A900A675A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 930FFC051AB702A900A675A6 /* LaunchScreen.xib */; };
 		930FFC131AB702A900A675A6 /* Creat_MusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FFC121AB702A900A675A6 /* Creat_MusicTests.m */; };
+		930FFC211AB7101D00A675A6 /* viewback.png in Resources */ = {isa = PBXBuildFile; fileRef = 930FFC201AB7101D00A675A6 /* viewback.png */; };
+		937406D41AB80B5400D9D256 /* 就是爱你.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 937406D21AB80B5400D9D256 /* 就是爱你.lrc */; };
+		937406D51AB80B5400D9D256 /* 就是爱你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 937406D31AB80B5400D9D256 /* 就是爱你.mp3 */; };
+		937406D71AB8151000D9D256 /* 暂停.png in Resources */ = {isa = PBXBuildFile; fileRef = 937406D61AB8151000D9D256 /* 暂停.png */; };
+		93A44C821AB8491E00BBAE62 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A44C811AB8491E00BBAE62 /* pause.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +37,15 @@
 		930FFBFB1AB702A800A675A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		930FFBFD1AB702A800A675A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		930FFBFE1AB702A800A675A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		930FFC011AB702A900A675A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		930FFC031AB702A900A675A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		930FFC061AB702A900A675A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		930FFC0C1AB702A900A675A6 /* Creat MusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Creat MusicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		930FFC111AB702A900A675A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930FFC121AB702A900A675A6 /* Creat_MusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creat_MusicTests.m; sourceTree = "<group>"; };
+		930FFC201AB7101D00A675A6 /* viewback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewback.png; sourceTree = "<group>"; };
+		937406D21AB80B5400D9D256 /* 就是爱你.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "就是爱你.lrc"; sourceTree = "<group>"; };
+		937406D31AB80B5400D9D256 /* 就是爱你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "就是爱你.mp3"; sourceTree = "<group>"; };
+		937406D61AB8151000D9D256 /* 暂停.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停.png"; sourceTree = "<group>"; };
+		93A44C811AB8491E00BBAE62 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +91,7 @@
 				930FFBFB1AB702A800A675A6 /* AppDelegate.m */,
 				930FFBFD1AB702A800A675A6 /* ViewController.h */,
 				930FFBFE1AB702A800A675A6 /* ViewController.m */,
-				930FFC001AB702A900A675A6 /* Main.storyboard */,
 				930FFC031AB702A900A675A6 /* Images.xcassets */,
-				930FFC051AB702A900A675A6 /* LaunchScreen.xib */,
 				930FFBF61AB702A800A675A6 /* Supporting Files */,
 			);
 			path = "Creat Music";
@@ -97,6 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				930FFBF71AB702A800A675A6 /* Info.plist */,
+				930FFC201AB7101D00A675A6 /* viewback.png */,
+				937406D61AB8151000D9D256 /* 暂停.png */,
+				93A44C811AB8491E00BBAE62 /* pause.png */,
+				937406D21AB80B5400D9D256 /* 就是爱你.lrc */,
+				937406D31AB80B5400D9D256 /* 就是爱你.mp3 */,
 				930FFBF81AB702A800A675A6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -199,9 +208,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				930FFC021AB702A900A675A6 /* Main.storyboard in Resources */,
-				930FFC071AB702A900A675A6 /* LaunchScreen.xib in Resources */,
+				937406D71AB8151000D9D256 /* 暂停.png in Resources */,
+				937406D51AB80B5400D9D256 /* 就是爱你.mp3 in Resources */,
+				93A44C821AB8491E00BBAE62 /* pause.png in Resources */,
+				937406D41AB80B5400D9D256 /* 就是爱你.lrc in Resources */,
 				930FFC041AB702A900A675A6 /* Images.xcassets in Resources */,
+				930FFC211AB7101D00A675A6 /* viewback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +254,6 @@
 			targetProxy = 930FFC0D1AB702A900A675A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		930FFC001AB702A900A675A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				930FFC011AB702A900A675A6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		930FFC051AB702A900A675A6 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				930FFC061AB702A900A675A6 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		930FFC141AB702A900A675A6 /* Debug */ = {
@@ -412,6 +405,7 @@
 				930FFC181AB702A900A675A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		930FFC191AB702A900A675A6 /* Build configuration list for PBXNativeTarget "Creat MusicTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +414,7 @@
 				930FFC1B1AB702A900A675A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

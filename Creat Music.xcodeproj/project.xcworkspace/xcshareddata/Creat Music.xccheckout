@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5456C6CB-609F-4A8C-B2CF-874511B6BADC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Creat Music</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FFCD1A1A237A7AF04E344868FD11C9D033B7AAB6</key>
+		<string>https://github.com/TeamWe/Creat-Music.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Creat Music.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FFCD1A1A237A7AF04E344868FD11C9D033B7AAB6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TeamWe/Creat-Music.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FFCD1A1A237A7AF04E344868FD11C9D033B7AAB6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FFCD1A1A237A7AF04E344868FD11C9D033B7AAB6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Creat%20Music</string>
+		</dict>
+	</array>
+</dict>
+</plist>
