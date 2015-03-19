@@ -18,28 +18,29 @@ AVAudioPlayer * audioPlayer;
 
 NSTimer * timer;
 CGFloat progVal;
-UIProgressView * progressview;
+UISlider * progressview;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewback"]]];
-
-    
     self.view.alpha = 0.5;
+    
     
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(140, 400, 40, 40);
     [button setShowsTouchWhenHighlighted:YES];
     [button setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     [self.view addSubview:button];
+    [button addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     UIButton * button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.frame = CGRectMake(140, 360, 40, 40);
     [button1 setShowsTouchWhenHighlighted:YES];
     [self.view addSubview:button1];
-    
+    [button1 addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -47,19 +48,22 @@ UIProgressView * progressview;
     audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
 //    [audioPlayer play];
     
-    [button addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
-    [button1 addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
     
-    progressview = [[UIProgressView alloc]initWithFrame:CGRectMake(10, 450, 300, 10)];
+    
+    progressview = [[UISlider alloc]initWithFrame:CGRectMake(10, 450, 300, 10)];
     progressview.tintColor = [UIColor redColor];
-
+    progressview.value = 0.0;
+    progressview.minimumValue = 0.0;
+    progressview.maximumValue = 1.0;
+    [progressview addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:progressview];
+    
+    
 //    progressview.backgroundColor = [UIColor greenColor];
     
     
     progVal = audioPlayer.duration;
     audioPlayer.numberOfLoops = -1;
-    
     audioPlayer.delegate = self;
     
     
@@ -67,6 +71,17 @@ UIProgressView * progressview;
 //    self.show.text = msg;
     
     
+    
+}
+
+- (void)sliderValueChanged:(id)sender
+{
+
+    
+//    UIImageView *imageView = [progressview.subviews objectAtIndex:2];
+//    CGRect theRect = [self.view convertRect:imageView.frame fromView:imageView.superview];
+//    progressview.value = theRect.size.width/progressview.frame.size.width;    不懂了
+    audioPlayer.currentTime = progressview.value*progVal;
     
 }
 
@@ -91,11 +106,12 @@ UIProgressView * progressview;
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProg) userInfo:nil repeats:YES];
     }
 }
+
 - (void)updateProg
 {
     
     //    为什么self.button 可以，但是progress不可以？
-    progressview.progress = audioPlayer.currentTime/progVal;
+    progressview.value = audioPlayer.currentTime/progVal;
 }
 
 -(void)stop:(id)sender
