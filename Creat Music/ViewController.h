@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController<AVAudioPlayerDelegate>
+@interface ViewController : UIViewController<AVAudioPlayerDelegate,UITableViewDataSource>{
+    UITableView * table;
+    NSTimer * timer;
+    CGFloat progVal;
+    UISlider * progressview;
+    NSMutableArray *_musictime;
+    NSMutableArray *_lyrics;
+    NSMutableArray *_t;
+}
 
 
 @end

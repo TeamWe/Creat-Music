@@ -13,9 +13,16 @@
 		930FFC041AB702A900A675A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930FFC031AB702A900A675A6 /* Images.xcassets */; };
 		930FFC131AB702A900A675A6 /* Creat_MusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FFC121AB702A900A675A6 /* Creat_MusicTests.m */; };
 		930FFC211AB7101D00A675A6 /* viewback.png in Resources */ = {isa = PBXBuildFile; fileRef = 930FFC201AB7101D00A675A6 /* viewback.png */; };
+		936E96D21AC006580046BED2 /* lrc.png in Resources */ = {isa = PBXBuildFile; fileRef = 936E96D11AC006580046BED2 /* lrc.png */; };
+		936E96D61AC03E550046BED2 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 936E96D31AC03E550046BED2 /* next.png */; };
+		936E96D71AC03E550046BED2 /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 936E96D41AC03E550046BED2 /* previous.png */; };
+		936E96D81AC03E550046BED2 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 936E96D51AC03E550046BED2 /* stop.png */; };
+		936E97361AC044CA0046BED2 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936E97351AC044CA0046BED2 /* MusicModel.m */; };
 		937406D41AB80B5400D9D256 /* 就是爱你.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 937406D21AB80B5400D9D256 /* 就是爱你.lrc */; };
 		937406D51AB80B5400D9D256 /* 就是爱你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 937406D31AB80B5400D9D256 /* 就是爱你.mp3 */; };
 		937406D71AB8151000D9D256 /* 暂停.png in Resources */ = {isa = PBXBuildFile; fileRef = 937406D61AB8151000D9D256 /* 暂停.png */; };
+		9399B0281ABED8720047260F /* 当我唱起这首歌.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 9399B0261ABED8720047260F /* 当我唱起这首歌.lrc */; };
+		9399B0291ABED8720047260F /* 当我唱起这首歌.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9399B0271ABED8720047260F /* 当我唱起这首歌.mp3 */; };
 		93A44C821AB8491E00BBAE62 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A44C811AB8491E00BBAE62 /* pause.png */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +49,17 @@
 		930FFC111AB702A900A675A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930FFC121AB702A900A675A6 /* Creat_MusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creat_MusicTests.m; sourceTree = "<group>"; };
 		930FFC201AB7101D00A675A6 /* viewback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewback.png; sourceTree = "<group>"; };
+		936E96D11AC006580046BED2 /* lrc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lrc.png; sourceTree = "<group>"; };
+		936E96D31AC03E550046BED2 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		936E96D41AC03E550046BED2 /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
+		936E96D51AC03E550046BED2 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		936E97341AC044CA0046BED2 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
+		936E97351AC044CA0046BED2 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
 		937406D21AB80B5400D9D256 /* 就是爱你.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "就是爱你.lrc"; sourceTree = "<group>"; };
 		937406D31AB80B5400D9D256 /* 就是爱你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "就是爱你.mp3"; sourceTree = "<group>"; };
 		937406D61AB8151000D9D256 /* 暂停.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停.png"; sourceTree = "<group>"; };
+		9399B0261ABED8720047260F /* 当我唱起这首歌.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "当我唱起这首歌.lrc"; sourceTree = "<group>"; };
+		9399B0271ABED8720047260F /* 当我唱起这首歌.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "当我唱起这首歌.mp3"; sourceTree = "<group>"; };
 		93A44C811AB8491E00BBAE62 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +106,8 @@
 				930FFBFB1AB702A800A675A6 /* AppDelegate.m */,
 				930FFBFD1AB702A800A675A6 /* ViewController.h */,
 				930FFBFE1AB702A800A675A6 /* ViewController.m */,
+				936E97341AC044CA0046BED2 /* MusicModel.h */,
+				936E97351AC044CA0046BED2 /* MusicModel.m */,
 				930FFC031AB702A900A675A6 /* Images.xcassets */,
 				930FFBF61AB702A800A675A6 /* Supporting Files */,
 			);
@@ -106,7 +123,13 @@
 				93A44C811AB8491E00BBAE62 /* pause.png */,
 				937406D21AB80B5400D9D256 /* 就是爱你.lrc */,
 				937406D31AB80B5400D9D256 /* 就是爱你.mp3 */,
+				936E96D11AC006580046BED2 /* lrc.png */,
 				930FFBF81AB702A800A675A6 /* main.m */,
+				936E96D31AC03E550046BED2 /* next.png */,
+				936E96D41AC03E550046BED2 /* previous.png */,
+				936E96D51AC03E550046BED2 /* stop.png */,
+				9399B0261ABED8720047260F /* 当我唱起这首歌.lrc */,
+				9399B0271ABED8720047260F /* 当我唱起这首歌.mp3 */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -208,10 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9399B0291ABED8720047260F /* 当我唱起这首歌.mp3 in Resources */,
 				937406D71AB8151000D9D256 /* 暂停.png in Resources */,
 				937406D51AB80B5400D9D256 /* 就是爱你.mp3 in Resources */,
 				93A44C821AB8491E00BBAE62 /* pause.png in Resources */,
+				9399B0281ABED8720047260F /* 当我唱起这首歌.lrc in Resources */,
+				936E96D81AC03E550046BED2 /* stop.png in Resources */,
 				937406D41AB80B5400D9D256 /* 就是爱你.lrc in Resources */,
+				936E96D71AC03E550046BED2 /* previous.png in Resources */,
+				936E96D61AC03E550046BED2 /* next.png in Resources */,
+				936E96D21AC006580046BED2 /* lrc.png in Resources */,
 				930FFC041AB702A900A675A6 /* Images.xcassets in Resources */,
 				930FFC211AB7101D00A675A6 /* viewback.png in Resources */,
 			);
@@ -232,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				930FFBFF1AB702A800A675A6 /* ViewController.m in Sources */,
+				936E97361AC044CA0046BED2 /* MusicModel.m in Sources */,
 				930FFBFC1AB702A800A675A6 /* AppDelegate.m in Sources */,
 				930FFBF91AB702A800A675A6 /* main.m in Sources */,
 			);
@@ -356,10 +386,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -375,10 +407,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "Creat MusicTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
