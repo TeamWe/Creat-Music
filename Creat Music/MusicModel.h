@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MusicModel : NSObject{
+@interface MusicModel : NSObject
+
+@property(copy,nonatomic)NSString *name;
+@property(copy,nonatomic)NSString *type;
     
-}
+-(id)initWithName:(NSString *)name andType:(NSString *)type;
 
 @end

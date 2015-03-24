@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MusicModel.h"
 
 AVAudioPlayer * audioPlayer;
 
@@ -50,7 +51,7 @@ AVAudioPlayer * audioPlayer;
     [buttonLrc setImage:[UIImage imageNamed:@"lrc"] forState:UIControlStateNormal];
     [buttonLrc setShowsTouchWhenHighlighted:YES];
     [self.view addSubview:buttonLrc];
-    [buttonLrc addTarget:self action:@selector(parselyric) forControlEvents:UIControlEventTouchUpInside];
+    [buttonLrc addTarget:self action:@selector(showlyric) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton * buttonNext = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonNext.frame = CGRectMake(190, 400, 40, 40);
@@ -68,12 +69,7 @@ AVAudioPlayer * audioPlayer;
     [self.view addSubview:buttonPrevious];
 
     
-    NSURL * fileURL = [[NSBundle mainBundle]URLForResource:@"就是爱你" withExtension:@"mp3"];
-    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
-//    [audioPlayer play];
-    progVal = audioPlayer.duration;
-    audioPlayer.numberOfLoops = -1;
-    audioPlayer.delegate = self;
+    [self initdata];
 
     
     
@@ -85,15 +81,8 @@ AVAudioPlayer * audioPlayer;
     [progressview addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:progressview];
     
-    table = [[UITableView alloc]initWithFrame:CGRectMake(20, 120, 280, 160) style:UITableViewStylePlain];
-    table.alpha = 0.5;
-    table.backgroundColor = [UIColor grayColor];
-    table.dataSource = self;
-    table.layer.cornerRadius = 8;
-#warning budong
-    table.layer.masksToBounds = YES;
-    [self.view addSubview:table];
-    [self parselyric];
+    
+    
     
 //    progressview.backgroundColor = [UIColor greenColor];
 //    为什么吧解析URL放在progressview之后就不能用，进度条从最后就不动了。
@@ -102,9 +91,43 @@ AVAudioPlayer * audioPlayer;
     
 }
 
+-(void)initdata{
+    
+    
+    MusicModel *music1=[[MusicModel alloc]initWithName:@"就是爱你" andType:@"mp3"];
+    MusicModel *music2=[[MusicModel alloc]initWithName:@"当我唱起这首歌" andType:@"mp3"];
+    _musicmodel=[[NSMutableArray alloc]initWithCapacity:10];
+    [_musicmodel addObject:music1];
+    [_musicmodel addObject:music2];
+    
+    NSURL * fileURL = [[NSBundle mainBundle]URLForResource:music1.name withExtension:music1.type];
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
+    //    [audioPlayer play];
+    progVal = audioPlayer.duration;
+//    audioPlayer.numberOfLoops = -1;
+    audioPlayer.delegate = self;
+    
+    currentMusic = music1;
+}
+
+-(void)next{
+    currentMusic = [_musicmodel objectAtIndex:([_musicmodel indexOfObject:currentMusic]+1)];
+    NSURL * fileURL = [[NSBundle mainBundle]URLForResource:currentMusic.name withExtension:currentMusic.type];
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
+    //    [audioPlayer play];
+    progVal = audioPlayer.duration;
+    //    audioPlayer.numberOfLoops = -1;
+    audioPlayer.delegate = self;
+    [self parselyric];
+}
+
+-(void)previous{
+
+}
+
 -(void)parselyric
 {
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"就是爱你" ofType:@"lrc"];
+    NSString *path = [[NSBundle mainBundle]pathForResource:currentMusic.name ofType:@"lrc"];
     //if lyric file exits
     if ([path length]) {
         //get the lyric string
@@ -140,8 +163,8 @@ AVAudioPlayer * audioPlayer;
     }
     else
         _lyrics = nil;
-    
-    
+}
+
 //    NSLog(@"234234");
 //    NSInteger n=0;
 //    for (id object in _t) {
@@ -159,8 +182,26 @@ AVAudioPlayer * audioPlayer;
 //        n++;
 //        NSLog(@"234234");
 //    }
-}
 
+-(void)showlyric{
+    if (!table) {
+        table = [[UITableView alloc]initWithFrame:CGRectMake(20, 120, 280, 160) style:UITableViewStylePlain];
+        table.alpha = 0.5;
+        table.backgroundColor = [UIColor grayColor];
+        table.dataSource = self;
+        table.layer.cornerRadius = 8;
+#warning budong
+        table.layer.masksToBounds = YES;
+        [self.view addSubview:table];
+        [self parselyric];
+    }
+    else
+    {
+        [table removeFromSuperview];
+//        等于nil后是不是就不占用内存了，cell所占用的内存呢？
+        table = nil;
+    }
+}
 
 
 
@@ -179,6 +220,7 @@ AVAudioPlayer * audioPlayer;
 //    cell.textLabel.text = _lyrics[0];
     }
     NSUInteger rowNo = indexPath.row;
+//    数组越界
     cell.textLabel.text = [_lyrics objectAtIndex:rowNo];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return  cell;
@@ -213,6 +255,7 @@ AVAudioPlayer * audioPlayer;
     if (timer == nil) {
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProg) userInfo:nil repeats:YES];
     }
+//    这个东西我应该放在哪使他的内存最小一定不能是这
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLrc)  userInfo:nil repeats:YES];
 }
 

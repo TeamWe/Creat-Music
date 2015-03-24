@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+@class MusicModel;
+
 @interface ViewController : UIViewController<AVAudioPlayerDelegate,UITableViewDataSource>{
     UITableView * table;
     NSTimer * timer;
@@ -17,7 +19,11 @@
     NSMutableArray *_musictime;
     NSMutableArray *_lyrics;
     NSMutableArray *_t;
+    NSMutableArray *_musicmodel;
+    MusicModel * currentMusic;
 }
+
+//@property(strong,nonatomic)Musicmodel *currentMusic;
 
 
 @end
