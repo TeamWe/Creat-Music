@@ -104,25 +104,50 @@ AVAudioPlayer * audioPlayer;
     audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
     //    [audioPlayer play];
     progVal = audioPlayer.duration;
-//    audioPlayer.numberOfLoops = -1;
+    audioPlayer.numberOfLoops = -1;
     audioPlayer.delegate = self;
     
     currentMusic = music1;
 }
 
 -(void)next{
-    currentMusic = [_musicmodel objectAtIndex:([_musicmodel indexOfObject:currentMusic]+1)];
+//    NSInteger index;
+    if ([_musicmodel indexOfObject:currentMusic] < _musicmodel.count-1) {
+        currentMusic = [_musicmodel objectAtIndex:([_musicmodel indexOfObject:currentMusic]+1)];
+    }
+    else
+        currentMusic = [_musicmodel objectAtIndex:0];
     NSURL * fileURL = [[NSBundle mainBundle]URLForResource:currentMusic.name withExtension:currentMusic.type];
     audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
     //    [audioPlayer play];
     progVal = audioPlayer.duration;
-    //    audioPlayer.numberOfLoops = -1;
+//    无限循环
+//        audioPlayer.numberOfLoops = -1;
     audioPlayer.delegate = self;
+//    bug解决了但是总是感觉不好啊，上次的bug的更本原因就是开始歌曲的cell太小，下一首歌词很大导致数组越界
+    [self showlyric];
+    [self showlyric];
+    [audioPlayer play];
     [self parselyric];
+    [self updateLrc];
 }
 
 -(void)previous{
-
+    if ([_musicmodel indexOfObject:currentMusic] > 0) {
+        currentMusic = [_musicmodel objectAtIndex:[_musicmodel indexOfObject:currentMusic]-1];
+    } else {
+        currentMusic = [_musicmodel lastObject];
+    }
+    NSURL * fileURL = [[NSBundle mainBundle]URLForResource:currentMusic.name withExtension:currentMusic.type];
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
+    //    [audioPlayer play];
+    progVal = audioPlayer.duration;
+    //    无限循环
+    //        audioPlayer.numberOfLoops = -1;
+    audioPlayer.delegate = self;
+    [audioPlayer play];
+    [self parselyric];
+    [self updateLrc];
 }
 
 -(void)parselyric
@@ -255,6 +280,7 @@ AVAudioPlayer * audioPlayer;
     if (timer == nil) {
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProg) userInfo:nil repeats:YES];
     }
+#warning 重复调用
 //    这个东西我应该放在哪使他的内存最小一定不能是这
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLrc)  userInfo:nil repeats:YES];
 }
